@@ -21,11 +21,24 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    animation: pulse 2s infinite;
 
     svg {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 
@@ -55,13 +68,45 @@
       display: flex;
       align-items: center;
       padding: 0 10px 0;
+      font: 300 12px/14px Roboto, sans-serif;
     }
 
     &-messageList {
-      padding: 10px 5px 0;
+      display: block;
+      padding: 10px 5px 50px;
+      overflow-y: scroll;
+      position: relative;
+      height: 100%;
     }
 
-    &-messageItem {}
+    &-message {
+      display: block;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
+
+      &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+
+    &-message__title {
+      font: 500 14px/16px Roboto, sans-serif;
+    }
+
+    &-message__text {
+      font: 300 12px/14px Roboto, sans-serif;
+    }
+
+    &-message__author,
+    &-message__date {
+      font: 500 10px/12px Roboto, sans-serif;
+    }
+
+    &-message__link {
+      font: 300 12px/14px Roboto, sans-serif;
+    }
 
     &-footer {}
   }

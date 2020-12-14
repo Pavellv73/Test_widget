@@ -10,11 +10,12 @@ function getData() {
 }
 
 function generateItem(item) {
+  let newDate = new Date(item.date).toDateString()
   return `<div class="widget__content-message">
-        <span class="widget__content-message__title">${item.title}</span>
+        <h4 class="widget__content-message__title">${item.title}</h4>
         <p class="widget__content-message__text">${item.message}</p>
         <p class="widget__content-message__author">${item.author}</p>
-        <p class="widget__content-message__date">${item.date}</p>
+        <p class="widget__content-message__date">${newDate}</p>
         <a href="\`${item.link}\`" class="widget__content-message__link">Читать больше</a>
       </div>`;
 }
