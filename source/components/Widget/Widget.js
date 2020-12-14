@@ -10,7 +10,7 @@ function getData() {
 }
 
 function generateItem(item) {
-  let newDate = new Date(item.date).toDateString()
+  const newDate = new Date(item.date).toDateString();
   return `<div class="widget__content-message">
         <h4 class="widget__content-message__title">${item.title}</h4>
         <p class="widget__content-message__text">${item.message}</p>
