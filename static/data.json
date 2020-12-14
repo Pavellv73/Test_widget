@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "title": "Titl",
+      "message":"Text",
+      "author": "Author",
+      "date": "1995-12-17T03:24:00",
+      "link": "https://info.ru/modeinfo",
+      "status": false
+    },
+    {
+      "title": "Title",
+      "message": "Text",
+      "author": "Author",
+      "date": "1995-12-17T03:24:00",
+      "link": "https://info.ru/modeinfo",
+      "status": false
+    },
+    {
+      "title": "Title",
+      "message": "Tex",
+      "author": "Author",
+      "date": "1995-12-17T03:24:00",
+      "link": "https://info.ru/modeinfo",
+      "status": false
+    }
+  ]
+}
