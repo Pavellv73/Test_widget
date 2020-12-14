@@ -32,4 +32,4 @@ widget.addEventListener('click', () => {
   content.classList.toggle('widget__content--visible');
 });
 
-document.addEventListener('DOMContentLoaded', initWidget());
+document.addEventListener("DOMContentLoaded", initWidget());
