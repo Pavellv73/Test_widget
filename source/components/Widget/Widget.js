@@ -1,10 +1,6 @@
 import './Widget.scss';
 import data from '../../../static/data.json';
 
-const widget = document.querySelector('.widget');
-const content = widget.querySelector('.widget__content');
-const lenta = widget.querySelector('.widget__content-messageList');
-
 function getData() {
   return data;
 }
@@ -20,6 +16,10 @@ function generateItem(item) {
       </div>`;
 }
 
+const widget = document.querySelector('.widget');
+const content = widget.querySelector('.widget__content');
+const lenta = widget.querySelector('.widget__content-messageList');
+
 function initWidget() {
   const values = getData();
   values.data.forEach((item) => {
@@ -28,8 +28,28 @@ function initWidget() {
   });
 }
 
+function come(elem) {
+  const docViewTop = lenta.scrollTop;
+  const docViewBottom = docViewTop + lenta.offsetHeight;
+  const elemTop = elem.offsetTop;
+  const elemBottom = elemTop + elem.offsetHeight;
+
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+lenta.addEventListener('scroll', () => {
+  const messages = lenta.querySelectorAll('.widget__content-message');
+  messages.forEach((i) => {
+    if (come(i)) {
+      setTimeout(() => {
+        i.classList.add('widget__content-message--read');
+      }, 1000);
+    }
+  });
+});
+
 widget.addEventListener('click', () => {
   content.classList.toggle('widget__content--visible');
 });
 
-document.addEventListener("DOMContentLoaded", initWidget());
+document.addEventListener('DOMContentLoaded', initWidget());
